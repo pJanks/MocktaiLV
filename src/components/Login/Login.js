@@ -19,12 +19,16 @@ export class Login extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  loginUser = (event, username, password) => {
+  loginUser = async (event, username, password) => {
     event.preventDefault();
     if(username && password) {
-      this.props.addUserToStore(username);
-      this.setState({ userVerified: true })
-      console.log(username, password, this.state.username, this.state.password, this.state);
+      await this.setState({ userVerified: true })
+      this.props.addUserToStore({
+        name: this.state.username,
+        userVerified: true
+      })
+    } else {
+      console.log('hi');
     }
   }
 
