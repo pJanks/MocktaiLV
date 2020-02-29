@@ -16,8 +16,8 @@ export class AllMocktails extends Component {
   componentDidMount = async () => {
     try {
       let allDrinksData = await fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
-      await this.props.addDrinksToStore(allDrinksData)
-      await this.setState({ allDrinks: allDrinksData })
+      await this.props.addDrinksToStore(allDrinksData.drinks)
+      await this.setState({ allDrinks: allDrinksData.drinks })
     }
     catch(error) {
       console.log(error)
@@ -27,8 +27,7 @@ export class AllMocktails extends Component {
   render() {
     return(
       this.state.allDrinks.map(drink => {
-        return <MocktailCard drink={drink} />
-
+        return <MocktailCard drink={drink} key={drink.idDrink}/>
       })
     )
   }
