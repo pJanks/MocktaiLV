@@ -4,6 +4,6 @@ export const fetchData = async (url, options = {}) => {
    if(!response.ok) {
      throw new Error('There was an error fetching data')
    } else {
-     return fetchedData.drinks
+     return fetchedData
    }
  }
