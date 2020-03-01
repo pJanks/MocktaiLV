@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import Login from '../Login/Login'
 import AllMocktails from '../AllMocktails/AllMocktails'
 import DrinkDetails from '../DrinkDetails/DrinkDetails'
+import BadPathPage from '../BadPathPage/BadPathPage'
+import OffTheWagon from '../OffTheWagon/OffTheWagon'
+import Nav from '../Nav/Nav'
+import SignUp from '../SignUp/SignUp'
 import './App.css';
 
 export class App extends Component {
@@ -12,17 +16,20 @@ export class App extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <main className="App">
-      <header>
-        <h1>MocktaiLV</h1>
-      </header>
+        <header>
+          <h1>MocktaiLV</h1>
+        </header>
         <Switch>
           <Route exact path='/' component={Login} />
           <Route exact path='/AllMocktails' component={AllMocktails} />
           <Route exact path={`/DrinkDetails${this.props.selectedDrink.idDrink}`} render={() => <DrinkDetails drink={this.props.selectedDrink} />} />
+          <Route exact path='/SignUp' component={SignUp} />
+          <Route exact path ='/OffTheWagon' component={OffTheWagon} />
+          <BadPathPage />
         </Switch>
+        <Nav />
       </main>
     );
   }
