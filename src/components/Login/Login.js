@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addUser } from '../../actions'
 import AllMocktails from '../AllMocktails/AllMocktails'
@@ -11,7 +11,8 @@ export class Login extends Component {
       username: '',
       password: '',
       error: false,
-      userVerified: false
+      userVerified: false,
+      isGuest: false
     }
   }
 
@@ -19,40 +20,54 @@ export class Login extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  loginUser = async (event, username, password) => {
+  checkLocalStorage = (name, password) => {
+    let keys = Object.keys(localStorage)
+    let user = keys.find(key => {
+      return (JSON.parse(localStorage[key]).name === name && JSON.parse(localStorage[key]).password === password)
+    })
+    return user
+  }
+
+  handleLoginButtonClick = async (event, username, password) => {
     event.preventDefault();
-    if(username && password) {
+    let validatedUserStorage = this.checkLocalStorage(username, password)
+    if(username && password && validatedUserStorage) {
       await this.setState({ userVerified: true })
       this.props.addUserToStore({
         name: this.state.username,
         userVerified: true
       })
     } else {
-      console.log('hi');
+      window.alert('You Must Sign Up')
     }
   }
 
+  handleGuestButtonClick = (event) => {
+    event.preventDefault()
+    this.setState({ isGuest: true })
+  }
+
   render() {
-    if(this.state.userVerified) {
-      return <Redirect to= '/AllMocktails/LoggedIn' />
+    if(this.state.userVerified || this.state.isGuest) {
+      return <Redirect to= '/AllMocktails' />
     } else {
       return (
         <form>
           <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          onChange={this.handleChange}
+            type="text"
+            name="username"
+            placeholder="Username"
+            onChange={this.handleChange}
           />
           <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={this.handleChange}
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={this.handleChange}
           />
-          <button onClick={(event) => this.loginUser(event, this.state.username, this.state.password)}>Login</button>
-          <button onClick={this.logUserInAsGuest}>Continue as Guest</button>
-          <button onClick={this.letUserSignUp}>Sign Up</button>
+          <button onClick={(event) => this.handleLoginButtonClick(event, this.state.username, this.state.password)}>Login</button>
+          <button onClick={(event) => this.handleGuestButtonClick(event)}>Continue as Guest</button>
+          <button onClick={(event) => this.handleSignUpButtonClick(event)}><Link to='/SignUp'>Sign Up</Link></button>
         </form>
       )
     }
