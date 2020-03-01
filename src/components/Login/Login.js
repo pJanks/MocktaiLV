@@ -52,23 +52,28 @@ export class Login extends Component {
       return <Redirect to= '/AllMocktails' />
     } else {
       return (
-        <form>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            onChange={this.handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={this.handleChange}
-          />
-          <button onClick={(event) => this.handleLoginButtonClick(event, this.state.username, this.state.password)}>Login</button>
-          <button onClick={(event) => this.handleGuestButtonClick(event)}>Continue as Guest</button>
-          <button onClick={(event) => this.handleSignUpButtonClick(event)}><Link to='/SignUp'>Sign Up</Link></button>
-        </form>
+        <main>
+          <form>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              onChange={this.handleChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={this.handleChange}
+            />
+            <button onClick={(event) => this.handleLoginButtonClick(event, this.state.username, this.state.password)}>Login</button>
+            <button onClick={(event) => this.handleGuestButtonClick(event)}>Continue as Guest</button>
+            <button onClick={(event) => this.handleSignUpButtonClick(event)}><Link to='/SignUp'>Sign Up</Link></button>
+          </form>
+          <p>
+            Find drinks to enjoy while your enjoying yourself in Sin City without the intoxicating effects of alcohol (if you so chose). Otherwise feel free to browse our alcoholc drinks in the 'Off the Wagon' section!
+          </p>
+        </main>
       )
     }
   }
