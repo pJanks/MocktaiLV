@@ -28,6 +28,7 @@ export class App extends Component {
           <Route exact path={`/DrinkDetails${this.props.selectedDrink.idDrink}`} render={() => <DrinkDetails drink={this.props.selectedDrink} />} />
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/OffTheWagon' component={OffTheWagon} />
+          <Route exact path='/Favorites' render={() => <Favorites user={this.props.user} />} />
           <BadPathPage />
         </Switch>
         <Nav />
@@ -38,6 +39,7 @@ export class App extends Component {
 
 export const mapStateToProps = (state) => ({
   selectedDrink: state.selectedDrink,
+  user: state.user
 })
 
 export default connect(mapStateToProps)(App);
