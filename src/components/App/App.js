@@ -8,6 +8,7 @@ import BadPathPage from '../BadPathPage/BadPathPage'
 import OffTheWagon from '../OffTheWagon/OffTheWagon'
 import Nav from '../Nav/Nav'
 import SignUp from '../SignUp/SignUp'
+import Favorites from '../Favorites/Favorites'
 import './App.css';
 
 export class App extends Component {
@@ -26,7 +27,8 @@ export class App extends Component {
           <Route exact path='/AllMocktails' component={AllMocktails} />
           <Route exact path={`/DrinkDetails${this.props.selectedDrink.idDrink}`} render={() => <DrinkDetails drink={this.props.selectedDrink} />} />
           <Route exact path='/SignUp' component={SignUp} />
-          <Route exact path ='/OffTheWagon' component={OffTheWagon} />
+          <Route exact path='/OffTheWagon' component={OffTheWagon} />
+          <Route exact path='Favorites' component={Favorites} />
           <BadPathPage />
         </Switch>
         <Nav />
