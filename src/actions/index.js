@@ -4,7 +4,7 @@ export const addUser = (user) => ({
 })
 
 export const addDrinks = (drinks) => ({
-  type: 'LOAD_NONALCOHOLIC_DRINKS',
+  type: 'LOAD_DRINKS',
   drinks
 })
 
