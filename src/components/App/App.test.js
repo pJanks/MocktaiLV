@@ -5,48 +5,35 @@ import { shallow } from 'enzyme'
 
 describe('App', () => {
   let wrapper, instance;
+
   beforeEach(() => {
-    wrapper = shallow(<App />)
+    wrapper = shallow(<App selectedDrink={ {
+      strDrink: "Afterglow",
+      strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
+      idDrink: "12560"
+    } } />)
     instance = wrapper.instance()
   })
 
-  it('should match a snapshot as expected', () => {
-    const wrapper = shallow(<App />)
-
+  it('should match a snapshot as expected', () => {  
     expect(wrapper).toMatchSnapshot()
   })
 
+  describe('mockStateToProps', () => {
 
-
-  // describe('mapStateToProps', () => {
-  //   it('should be able to update state', () => {
-  //     let mockState = {
-  //       allDrinks: [{
-  //           "strDrink": "Afterglow",
-  //           "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
-  //           "idDrink": "12560"
-  //       },
-  //       {
-  //           "strDrink": "Alice Cocktail",
-  //           "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/qyqtpv1468876144.jpg",
-  //           "idDrink": "12562"
-  //       }]
-  //     }
-  //
-  //     const expected = {
-  //       allDrinks: [{
-  //           "strDrink": "Afterglow",
-  //           "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
-  //           "idDrink": "12560"
-  //       },
-  //       {
-  //           "strDrink": "Alice Cocktail",
-  //           "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/qyqtpv1468876144.jpg",
-  //           "idDrink": "12562"
-  //       }]
-  //     }
-  //     const result = mapStateToProps(mockState)
-  //     expect(result).toEqual(expected)
-  //   })
-  // })
+    it('should return a selectedDrink object', () => {
+      const mockState = { selectedDrink: {
+        strDrink: "Afterglow",
+        strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
+        idDrink: "12560"
+      } }
+      const expected = {
+        strDrink: "Afterglow",
+        strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
+        idDrink: "12560"
+      }
+      const mappedProps = mapStateToProps( mockState );
+      expect(mappedProps.selectedDrink).toEqual(expected)
+    })
+  })
 })
