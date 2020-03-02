@@ -11,13 +11,20 @@ export const Favorites = (props) => {
       return (JSON.parse(localStorage[key]).name === props.user.name)
     })
     let finalUser = JSON.parse(localStorage[user])
-    let favorites = finalUser.favorites
-    return(
-      <div>
-        {!favorites.length && <h1>You have no favorites</h1>}
-        {favorites.length && favorites.map(drink => <MocktailCard drink={drink} key={drink.idDrink} />)}
-      </div>
-    )
+    favorites = finalUser.favorites
+    if(!favorites) {
+      return(
+        <div>
+          <h1>You have no favorites</h1>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          {favorites.map(drink => <MocktailCard drink={drink} key={drink.idDrink} />)}
+        </div>
+      )
+    }
   }
   return checkLocalStorage()
 }
