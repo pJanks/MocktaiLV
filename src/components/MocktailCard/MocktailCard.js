@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DrinkDetails from '../DrinkDetails/DrinkDetails'
+import PropTypes from 'prop-types'
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFavoriteDrink } from '../../actions'
@@ -53,5 +54,9 @@ export const mapDispatchToProps = (dispatch) => ({
 export const mapStateToProps = (state) => ({
   user: state.user
 })
+
+MocktailCard.propTypes = {
+  user: PropTypes.object
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(MocktailCard);

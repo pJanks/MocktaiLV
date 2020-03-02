@@ -9,6 +9,7 @@ import OffTheWagon from '../OffTheWagon/OffTheWagon'
 import Nav from '../Nav/Nav'
 import SignUp from '../SignUp/SignUp'
 import Favorites from '../Favorites/Favorites'
+import PropTypes from 'prop-types'
 import './App.css';
 
 export class App extends Component {
@@ -41,5 +42,10 @@ export const mapStateToProps = (state) => ({
   selectedDrink: state.selectedDrink,
   user: state.user
 })
+
+App.propTypes = {
+  selectedDrink: PropTypes.object,
+  user: PropTypes.object
+}
 
 export default connect(mapStateToProps)(App);
