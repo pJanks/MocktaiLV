@@ -1,0 +1,10 @@
+section {
+  display: flex;
+}
+
+div {
+  background-color: #7692FF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
