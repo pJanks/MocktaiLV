@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './SignUp.css'
 
-export class SignUp extends Component {
+class SignUp extends Component {
   constructor() {
     super()
     this.state = {
@@ -17,7 +17,6 @@ export class SignUp extends Component {
 
   handleSignUpButtonClick = (event, name, password) => {
     event.preventDefault()
-    console.log(this.state);
     localStorage.setItem(name, JSON.stringify(this.state));
   }
 
@@ -45,8 +44,4 @@ export class SignUp extends Component {
   }
 }
 
-export const mapDispatchToProps = () => {
-
-}
-
-export default connect(null, mapDispatchToProps)(SignUp);
+export default SignUp
