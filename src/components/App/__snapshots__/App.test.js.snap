@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match a snapshot as expected 1`] = `
+<main
+  className="App"
+>
+  <header>
+    <h1>
+      MocktaiLV
+    </h1>
+  </header>
+  <Switch>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(Login)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(AllMocktails)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/AllMocktails"
+    />
+    <Route
+      exact={true}
+      path="/DrinkDetails12560"
+      render={[Function]}
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(SignUp)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/SignUp"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(OffTheWagon)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/OffTheWagon"
+    />
+    <BadPathPage />
+  </Switch>
+  <Nav />
+</main>
+`;

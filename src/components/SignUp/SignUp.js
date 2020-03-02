@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './SignUp.css'
 
 export class SignUp extends Component {
   constructor() {
@@ -12,7 +13,6 @@ export class SignUp extends Component {
 
   handleChange = async (event) => {
     await this.setState({ [event.target.name]: event.target.value });
-    // console.log(this.state);
   }
 
   handleSignUpButtonClick = (event, name, password) => {
@@ -24,6 +24,7 @@ export class SignUp extends Component {
 
   render() {
     return (
+      <section>
       <form>
         <input
           type="text"
@@ -39,6 +40,7 @@ export class SignUp extends Component {
         />
         <button onClick={(event) => this.handleSignUpButtonClick(event, this.state.name, this.state.password)}>Sign Up</button>
       </form>
+      </section>
     )
   }
 }

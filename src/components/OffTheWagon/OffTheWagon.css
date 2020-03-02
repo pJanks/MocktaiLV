@@ -1,0 +1,13 @@
+.all-drinks {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  /* margin-top: 250px; */
+}
+
+div {
+  background-color: #7692FF;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}

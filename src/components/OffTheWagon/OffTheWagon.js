@@ -26,9 +26,13 @@ export class OffTheWagon extends Component {
 
   render() {
     return(
-      this.state.allDrinks.map(drink => {
+      <section className='all-drinks'>
+      <div>
+      {this.state.allDrinks.map(drink => {
         return <MocktailCard drink={drink} key={drink.idDrink}/>
-      })
+      })}
+      </div>
+      </section>
     )
   }
 }

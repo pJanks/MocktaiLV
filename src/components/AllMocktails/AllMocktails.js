@@ -4,6 +4,8 @@ import MocktailCard from '../MocktailCard/MocktailCard'
 import { connect } from 'react-redux';
 import { addDrinks } from '../../actions'
 import { fetchData }  from '../../utils/helperFunctions'
+import './AllMocktails.css';
+
 
 export class AllMocktails extends Component {
   constructor() {
@@ -26,9 +28,13 @@ export class AllMocktails extends Component {
 
   render() {
     return(
-      this.state.allDrinks.map(drink => {
-        return <MocktailCard drink={drink} key={drink.idDrink}/>
-      })
+      <section className='all-drinks'>
+      <div>
+        {this.state.allDrinks.map(drink => {
+          return <MocktailCard drink={drink} key={drink.idDrink}/>
+        })}
+        </div>
+      </section>
     )
   }
 }
