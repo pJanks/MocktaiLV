@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match a snapshot as expected 1`] = `
+<nav>
+  <button>
+    <Link
+      className="link"
+      to="/"
+    >
+      Homepage
+    </Link>
+  </button>
+  <button>
+    <Link
+      className="link"
+      to="/OffTheWagon"
+    >
+      Off The Wagon
+    </Link>
+  </button>
+  <button>
+    <Link
+      className="link"
+      to="/Favorites"
+    >
+      Favorites
+    </Link>
+  </button>
+</nav>
+`;
