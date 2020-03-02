@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './SignUp.css'
 
@@ -37,7 +38,7 @@ class SignUp extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button onClick={(event) => this.handleSignUpButtonClick(event, this.state.name, this.state.password)}>Sign Up</button>
+        <button onClick={(event) => this.handleSignUpButtonClick(event, this.state.name, this.state.password)}><Link className='link' to='/'> Sign Up</Link></button>
       </form>
       </section>
     )
