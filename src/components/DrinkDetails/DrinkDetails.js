@@ -12,7 +12,7 @@ export class DrinkDetails extends Component {
     }
   }
 
-  getDrinkDetails = async () => {
+  componentDidMount = async () => {
     try {
       if (!this.state.drink.drinks) {
         let drinkData = await fetchData(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.drink.idDrink}`)
@@ -26,7 +26,6 @@ export class DrinkDetails extends Component {
   }
 
   render() {
-    this.getDrinkDetails()
     if (!this.state.drink.drinks) {
       return <h1>Loading . . .</h1>
     } else {
