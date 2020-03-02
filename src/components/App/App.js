@@ -28,7 +28,6 @@ export class App extends Component {
           <Route exact path={`/DrinkDetails${this.props.selectedDrink.idDrink}`} render={() => <DrinkDetails drink={this.props.selectedDrink} />} />
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/OffTheWagon' component={OffTheWagon} />
-          <Route exact path='Favorites' component={Favorites} />
           <BadPathPage />
         </Switch>
         <Nav />
