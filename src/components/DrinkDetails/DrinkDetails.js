@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchData } from '../../utils/helperFunctions'
+import './DrinkDetails.css'
 
 
 export class DrinkDetails extends Component {
@@ -31,6 +32,7 @@ export class DrinkDetails extends Component {
     } else {
       return (
         <section>
+        <div>
           <h2>{this.state.drink.drinks[0].strDrink}</h2>
           <img src={this.props.drink.strDrinkThumb} alt='image of beverage' className='drink-image'/>
           <h3>Glass: {this.state.drink.drinks[0].strGlass}</h3>
@@ -50,6 +52,7 @@ export class DrinkDetails extends Component {
           {this.state.drink.drinks[0].strMeasure14 && <h3>Ingredients and Amount: {this.state.drink.drinks[0].strMeasure14} {this.state.drink.drinks[0].strIngredient14}</h3>}
           {this.state.drink.drinks[0].strMeasure15 && <h3>Ingredients and Amount: {this.state.drink.drinks[0].strMeasure15} {this.state.drink.drinks[0].strIngredient15}</h3>}
           <h3>Instructions: {this.state.drink.drinks[0].strInstructions}</h3>
+          </div>
         </section>
       )
     }

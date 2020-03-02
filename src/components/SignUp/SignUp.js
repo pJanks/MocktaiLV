@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './SignUp.css'
 
-export class SignUp extends Component {
+class SignUp extends Component {
   constructor() {
     super()
     this.state = {
@@ -17,7 +18,6 @@ export class SignUp extends Component {
 
   handleSignUpButtonClick = (event, name, password) => {
     event.preventDefault()
-    console.log(this.state);
     localStorage.setItem(name, JSON.stringify(this.state));
   }
 
@@ -38,15 +38,11 @@ export class SignUp extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button onClick={(event) => this.handleSignUpButtonClick(event, this.state.name, this.state.password)}>Sign Up</button>
+        <button onClick={(event) => this.handleSignUpButtonClick(event, this.state.name, this.state.password)}><Link className='link' to='/'> Sign Up</Link></button>
       </form>
       </section>
     )
   }
 }
 
-export const mapDispatchToProps = () => {
-
-}
-
-export default connect(null, mapDispatchToProps)(SignUp);
+export default SignUp
