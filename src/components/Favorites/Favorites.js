@@ -1,9 +1,10 @@
 import React from 'react'
 import MocktailCard from '../MocktailCard/MocktailCard'
+import PropTypes from 'prop-types'
 let favorites;
 
 export const Favorites = (props) => {
-  
+
   const checkLocalStorage = () => {
     let keys = Object.keys(localStorage)
     let user = keys.find(key => {
@@ -19,6 +20,10 @@ export const Favorites = (props) => {
     )
   }
   return checkLocalStorage()
+}
+
+Favorites.propTypes = {
+  props: PropTypes.object
 }
 
 export default Favorites

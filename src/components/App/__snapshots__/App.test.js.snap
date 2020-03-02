@@ -42,15 +42,7 @@ exports[`App should match a snapshot as expected 1`] = `
       render={[Function]}
     />
     <Route
-      component={
-        Object {
-          "$$typeof": Symbol(react.memo),
-          "WrappedComponent": [Function],
-          "compare": null,
-          "displayName": "Connect(SignUp)",
-          "type": [Function],
-        }
-      }
+      component={[Function]}
       exact={true}
       path="/SignUp"
     />
@@ -66,6 +58,11 @@ exports[`App should match a snapshot as expected 1`] = `
       }
       exact={true}
       path="/OffTheWagon"
+    />
+    <Route
+      exact={true}
+      path="/Favorites"
+      render={[Function]}
     />
     <BadPathPage />
   </Switch>
