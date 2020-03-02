@@ -5,7 +5,7 @@ An app to find nonalcoholic (if you choose) drinks for when your in Las Vegas, N
 This was a solo project. All design and functionality decisions were left up to me. I focused on incorporating user validation as well as distinct Routes using React, React Router, Redux, as well as Enzyme and Jest for testing.
 
 ### Screenshots
-![screenshot 1](../README.mdx )
+![screenshot 1](./src/assets/mocktails.png )
 
 ### Directions for Use
 - On page load, if you are already signed up, you can enter your credentials and proceed. Otherwise you can continue as a guest or choose to sign up.
