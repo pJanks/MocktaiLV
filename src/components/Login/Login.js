@@ -36,6 +36,7 @@ export class Login extends Component {
       await this.setState({ userVerified: true })
       this.props.addUserToStore({
         name: this.state.username,
+        password: this.state.password,
         userVerified: true
       })
     } else {
