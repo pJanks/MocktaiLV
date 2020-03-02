@@ -3,6 +3,8 @@ import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addUser } from '../../actions'
 import AllMocktails from '../AllMocktails/AllMocktails'
+import './Login.css';
+
 
 export class Login extends Component {
   constructor() {
@@ -10,7 +12,6 @@ export class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      error: false,
       userVerified: false,
       isGuest: false
     }
@@ -52,8 +53,9 @@ export class Login extends Component {
       return <Redirect to= '/AllMocktails' />
     } else {
       return (
-        <main>
-          <form>
+        <main className='login'>
+        <div className='login-content'>
+          <form className='login-form'>
             <input
               type="text"
               name="username"
@@ -68,11 +70,13 @@ export class Login extends Component {
             />
             <button onClick={(event) => this.handleLoginButtonClick(event, this.state.username, this.state.password)}>Login</button>
             <button onClick={(event) => this.handleGuestButtonClick(event)}>Continue as Guest</button>
-            <button onClick={(event) => this.handleSignUpButtonClick(event)}><Link to='/SignUp'>Sign Up</Link></button>
+            <button onClick={(event) => this.handleSignUpButtonClick(event)}><Link className='link' to='/SignUp'>Sign Up</Link></button>
           </form>
-          <p>
+          <br />
+          <h4>
             Find drinks to enjoy while your enjoying yourself in Sin City without the intoxicating effects of alcohol (if you so chose). Otherwise feel free to browse our alcoholc drinks in the 'Off the Wagon' section!
-          </p>
+          </h4>
+          </div>
         </main>
       )
     }
