@@ -1,7 +1,7 @@
 import React from 'react';
 import { Login, mapDispatchToProps } from './Login';
 import { shallow } from 'enzyme';
-import { addUserToStore } from '../../actions';
+import { addUser } from '../../actions';
 
 describe('Login', () => {
   let wrapper, mockUser;
@@ -28,5 +28,17 @@ describe('Login', () => {
     wrapper.find('[name="password"]').simulate('change', mockPassEvent);
 
     expect(wrapper.instance().handleChange).toHaveBeenCalledWith(mockUserEvent);
-    expect(wrapper.instance().handleChange).toHaveBeenCalledWith(mockPassEvent);        });
+    expect(wrapper.instance().handleChange).toHaveBeenCalledWith(mockPassEvent);
+  });
+
+  describe('mapDispatchToProps', () => {
+    it('should call dispatch with the addUser action when addUserToStore is called', () => {
+      const mockDispatch = jest.fn();
+
+      const actionToDispatch = addUser(mockUser)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.addUserToStore(mockUser)
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+  })
 });

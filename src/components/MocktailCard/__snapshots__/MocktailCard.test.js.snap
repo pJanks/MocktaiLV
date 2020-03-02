@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MocktailCard should match snapshot 1`] = `
+<article>
+  <h3>
+    Afterglow
+  </h3>
+  <button
+    onClick={[Function]}
+  >
+    Favorite
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    <Link
+      className="link"
+      to="/DrinkDetails12560"
+    >
+      Details
+    </Link>
+  </button>
+  <img
+    alt="drink image"
+    className="drink-image"
+    src="https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg"
+  />
+</article>
+`;
