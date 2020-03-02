@@ -16,7 +16,7 @@ describe('AllMocktails', () => {
 
   it('should call fetchData when component mounts', () => {
     const fetchData = jest.fn()
-    instance.componentDidMount = jest.fn().mockImplementation(() => fetchData())
+    instance.componentDidMount = jest.fn().mockImplementation(() => fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic'))
     jest.spyOn(instance, 'componentDidMount')
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
@@ -26,7 +26,10 @@ describe('AllMocktails', () => {
     })
     instance.componentDidMount()
     expect(fetchData).toHaveBeenCalled()
+    expect(fetchData).toHaveBeenCalledWith('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
     })
+
+
 
   describe('mapDispatchToProps', () => {
     it('should call dispatch with the addDrinks action when addDrinksToStore is called', () => {
