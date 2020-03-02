@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrinkDetails should match a snapshot as expected 1`] = `
+<h1>
+  Loading . . .
+</h1>
+`;
