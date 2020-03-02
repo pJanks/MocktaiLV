@@ -38,7 +38,7 @@ class SignUp extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button onClick={(event) => this.handleSignUpButtonClick(event, this.state.name, this.state.password)}><Link className='link' to='/'> Sign Up</Link></button>
+        <button onClick={(event) => this.handleSignUpButtonClick(event, this.state.name, this.state.password)}><Link className='link' to='/'>Sign Up</Link></button>
       </form>
       </section>
     )
