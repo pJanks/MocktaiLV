@@ -70,7 +70,7 @@ export class Login extends Component {
             />
             <button onClick={(event) => this.handleLoginButtonClick(event, this.state.username, this.state.password)}>Login</button>
             <button onClick={(event) => this.handleGuestButtonClick(event)}>Continue as Guest</button>
-            <button onClick={(event) => this.handleSignUpButtonClick(event)}><Link className='link' to='/SignUp'>Sign Up</Link></button>
+            <button><Link className='link' to='/SignUp'>Sign Up</Link></button>
           </form>
           <br />
           <h4>
