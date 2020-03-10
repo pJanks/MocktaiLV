@@ -3,6 +3,7 @@ import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addUser } from '../../actions'
 import AllMocktails from '../AllMocktails/AllMocktails'
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
 import './Login.css';
 
 
@@ -13,7 +14,8 @@ export class Login extends Component {
       username: '',
       password: '',
       userVerified: false,
-      isGuest: false
+      isGuest: false,
+      error: ''
     }
   }
 
@@ -32,15 +34,15 @@ export class Login extends Component {
   handleLoginButtonClick = async (event, username, password) => {
     event.preventDefault();
     let validatedUserStorage = this.checkLocalStorage(username, password)
-    if(username && password && validatedUserStorage) {
+    if (username && password && validatedUserStorage) {
       await this.setState({ userVerified: true })
       this.props.addUserToStore({
         name: this.state.username,
         password: this.state.password,
         userVerified: true
       })
-    } else {
-      window.alert('You Must Sign Up')
+    } else if (!username || !password || !validatedUserStorage) {
+      this.setState({ error: 'Your username or passowrd is incorrect, or you have not signed up yet. You must either enter the correct information, sign up, or continue as a guest.' })
     }
   }
 
@@ -50,11 +52,12 @@ export class Login extends Component {
   }
 
   render() {
-    if(this.state.userVerified || this.state.isGuest) {
+    if (this.state.userVerified || this.state.isGuest) {
       return <Redirect to= '/AllMocktails' />
     } else {
       return (
         <main className='login'>
+        <h2>{this.state.error}</h2>
         <div className='login-content'>
           <form className='login-form'>
             <input
