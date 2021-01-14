@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/MocktaiLV/precache-manifest.5fdf434d138c2e540ebc2fc302839145.js"
+  "/MocktaiLV/precache-manifest.04830c56def24f63ab7ac5c4c0104d28.js"
 );
 
 self.addEventListener('message', (event) => {
