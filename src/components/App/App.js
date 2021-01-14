@@ -24,7 +24,7 @@ export class App extends Component {
           <h1>MocktaiLV</h1>
         </header>
         <Switch>
-          <Route exact path='/' component={Login} />
+          <Route exact path='/MocktaiLV' component={Login} />
           <Route exact path='/AllMocktails' component={AllMocktails} />
           <Route exact path={`/DrinkDetails${this.props.selectedDrink.idDrink}`} render={() => <DrinkDetails drink={this.props.selectedDrink} />} />
           <Route exact path='/SignUp' component={SignUp} />
