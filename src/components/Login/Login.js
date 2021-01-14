@@ -3,7 +3,6 @@ import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addUser } from '../../actions'
 import AllMocktails from '../AllMocktails/AllMocktails'
-import ErrorMessage from '../ErrorMessage/ErrorMessage'
 import './Login.css';
 
 
